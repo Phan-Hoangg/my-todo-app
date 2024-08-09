@@ -1,4 +1,4 @@
-FILEPATH = "D:\Udemy\Python Mega Course Learn Python in 60 Days, Build 20 Apps\web_app1\venv\todos.txt"
+FILEPATH = "todos.txt"
 
 def get_todos(filepath=FILEPATH):
     with open(filepath, 'r') as file_local:

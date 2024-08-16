@@ -20,13 +20,25 @@ Contact me
 """
 st.write(content2)
 
-col3,col4 = st.columns(2)
+col3,empty_col, col4 = st.columns([1.5, 0.5, 1.5])
 
 df = pandas.read_csv('data.csv',sep=";")
+
 with col3:
-    for index, row in df.iterrows():
+    # Display the first 10 rows
+    for index, row in df[:10].iterrows():
         st.header(row['title'])
+        st.write(row['description'])
+        st.image(r"D:\Udemy\Python Mega Course Learn Python in 60 Days, Build 20 Apps\App2-portfolio\images/" + row["image"])
+        st.write(f"[Source Code]({row['url']})")
 
 with col4:
+    # Display rows from index 10 onwards
     for index, row in df[10:].iterrows():
         st.header(row['title'])
+        st.write(row['description'])
+        st.image(r"D:\Udemy\Python Mega Course Learn Python in 60 Days, Build 20 Apps\App2-portfolio\images/" + row["image"])
+        st.write(f"[Source Code]({row['url']})")
+
+
+
